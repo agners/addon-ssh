@@ -75,7 +75,7 @@ RUN \
     && pip3 install --no-cache-dir https://os-builds.home-assistant.io/amber/bellows-0.30.0.dev0-py3-none-any.whl \
     && pip3 install --no-cache-dir silabs-flasher==0.0.1 \
     && git clone --depth 1 \
-        git://github.com/NabuCasa/silabs-firmware.git ~/ \
+        https://github.com/NabuCasa/silabs-firmware.git ~/silabs-firmware \
     && git clone --depth 1 \
         git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
     \
