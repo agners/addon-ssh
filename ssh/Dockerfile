@@ -15,37 +15,33 @@ COPY requirements.txt /tmp/
 ARG BUILD_ARCH=amd64
 # hadolint ignore=DL3003
 RUN \
-    apk add --no-cache --virtual .build-dependencies \
+    apk del libcrypto1.1 libssl1.1 \
+    && apk add --no-cache --virtual .build-dependencies \
         bsd-compat-headers=0.7.2-r3 \
         build-base=0.5-r2 \
         cmake=3.21.3-r0 \
-        docker=20.10.11-r0 \
+        docker=20.10.14-r0 \
         json-c-dev=0.15-r1 \
         libffi-dev=3.4.2-r1 \
         libuv-dev=1.42.0-r0 \
-        openssl-dev=1.1.1l-r8 \
+        openssl-dev=1.1.1n-r0 \
         python3-dev=3.9.7-r4 \
-        zlib-dev=1.2.11-r3 \
-    \
+        zlib-dev=1.2.12-r0 \
     && apk add --no-cache \
         ack=3.5.0-r1 \
         alsa-plugins-pulse=1.2.5-r2 \
         alsa-utils=1.2.5.1-r2 \
         awake=1.0-r6 \
         bash-completion=2.11-r4 \
-        bind-tools=9.16.25-r0 \
         bluez=5.63-r0 \
         colordiff=1.0.19-r0 \
         device-mapper-libs=2.02.187-r2 \
-        docker-bash-completion=20.10.11-r0 \
-        docker-zsh-completion=20.10.11-r0 \
         git=2.34.1-r0 \
         htop=3.1.1-r0 \
         json-c=0.15-r1 \
         libltdl=2.4.6-r7 \
         libuv=1.42.0-r0 \
         libxml2-utils=2.9.13-r0 \
-        mariadb-client=10.6.4-r2 \
         mosh=1.3.2-r22 \
         mosquitto-clients=2.0.14-r0 \
         nano-syntax=5.9-r0 \
@@ -55,7 +51,7 @@ RUN \
         networkmanager=1.32.12-r1 \
         nmap=7.92-r2 \
         openssh=8.8_p1-r1 \
-        openssl=1.1.1l-r8 \
+        openssl=1.1.1n-r0 \
         pwgen=2.08-r1 \
         pulseaudio-utils=15.0-r2 \
         py3-pip=20.3.4-r1 \
@@ -77,7 +73,7 @@ RUN \
     && git clone --depth 1 \
         https://github.com/NabuCasa/silabs-firmware.git ~/silabs-firmware \
     && git clone --depth 1 \
-        git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
+        https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
     \
     && curl -L -s -o /usr/bin/ha \
         "https://github.com/home-assistant/cli/releases/download/4.15.1/ha_${BUILD_ARCH}" \
