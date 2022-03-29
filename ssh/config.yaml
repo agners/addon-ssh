@@ -1,6 +1,6 @@
 ---
 name: SSH & Web Terminal for RF Testing
-version: dev
+version: 11.0.0
 slug: ssh
 description: SSH & Web Terminal access to your Home Assistant instance
 url: https://github.com/hassio-addons/addon-ssh
@@ -12,6 +12,7 @@ ingress_stream: true
 panel_icon: mdi:console
 panel_title: Terminal
 homeassistant: 0.92.0b2
+image: ghcr.io/agners/ssh-rf-testing
 arch:
   - aarch64
 ports:
