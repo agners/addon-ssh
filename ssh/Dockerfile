@@ -70,10 +70,10 @@ RUN \
         zsh-autosuggestions=0.7.0-r0 \
         zsh-syntax-highlighting=0.7.1-r1 \
         zsh=5.8.1-r0 \
-        py3-aiohttp py3-click py3-pyserial py3-pycryptodome \
+        py3-aiohttp=3.8.1-r0 py3-click=8.0.1-r0 py3-pyserial=3.5-r2 py3-pycryptodome=3.10.1-r1 \
     \
-    && pip3 install https://os-builds.home-assistant.io/amber/bellows-0.30.0.dev0-py3-none-any.whl \
-    && pip3 install silabs-flasher \
+    && pip3 install --no-cache-dir https://os-builds.home-assistant.io/amber/bellows-0.30.0.dev0-py3-none-any.whl \
+    && pip3 install --no-cache-dir silabs-flasher \
     && git clone --depth 1 \
         git://github.com/NabuCasa/silabs-firmware.git ~/ \
     && git clone --depth 1 \
