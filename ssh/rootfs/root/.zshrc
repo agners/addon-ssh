@@ -97,4 +97,4 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source <(ha completion --zsh)
 
 alias be="bellows --device /dev/ttyAMA1 --baudrate 115200"
-alias flash="silabs-flasher --device /dev/ttyAMA1 --baudrate 115200 flash --firmware"
+alias flash="silabs-flasher --device /dev/ttyAMA1 --baudrate 115200 flash --no-ezsp-reset --cm4-gpio-reset --firmware"
