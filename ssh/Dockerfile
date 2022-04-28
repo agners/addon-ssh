@@ -20,23 +20,23 @@ RUN \
         bsd-compat-headers=0.7.2-r3 \
         build-base=0.5-r2 \
         cmake=3.21.3-r0 \
-        docker=20.10.14-r0 \
+        docker=20.10.14-r1 \
         json-c-dev=0.15-r1 \
         libffi-dev=3.4.2-r1 \
         libuv-dev=1.42.0-r0 \
         openssl-dev=1.1.1n-r0 \
         python3-dev=3.9.7-r4 \
-        zlib-dev=1.2.12-r0 \
+        zlib-dev=1.2.12-r1 \
     && apk add --no-cache \
         ack=3.5.0-r1 \
         alsa-plugins-pulse=1.2.5-r2 \
         alsa-utils=1.2.5.1-r2 \
         awake=1.0-r6 \
         bash-completion=2.11-r4 \
-        bluez=5.63-r0 \
+        bluez=5.64-r0 \
         colordiff=1.0.19-r0 \
         device-mapper-libs=2.02.187-r2 \
-        git=2.34.1-r0 \
+        git=2.34.2-r0 \
         htop=3.1.1-r0 \
         json-c=0.15-r1 \
         libltdl=2.4.6-r7 \
@@ -60,16 +60,17 @@ RUN \
         sqlite=3.36.0-r0 \
         sudo=1.9.8_p2-r1 \
         tmux=3.2a-r0 \
-        vim=8.2.4173-r0 \
+        vim=8.2.4708-r0 \
         wget=1.21.2-r2 \
         zip=3.0-r9 \
         zsh-autosuggestions=0.7.0-r0 \
         zsh-syntax-highlighting=0.7.1-r1 \
         zsh=5.8.1-r0 \
-        py3-aiohttp=3.8.1-r0 py3-click=8.0.1-r0 py3-pyserial=3.5-r2 py3-pycryptodome=3.10.1-r1 \
+        py3-aiohttp=3.8.1-r0 py3-click=8.0.1-r0 py3-pyserial=3.5-r2 py3-pycryptodome=3.10.1-r1 py3-cryptography=3.3.2-r3 \
     \
     && pip3 install --no-cache-dir https://os-builds.home-assistant.io/amber/bellows-0.30.0.dev0-py3-none-any.whl \
     && pip3 install --no-cache-dir silabs-flasher==0.0.1 \
+    && pip3 install --no-cache-dir RPi.GPIO==0.7.1 \
     && git clone --depth 1 \
         https://github.com/NabuCasa/silabs-firmware.git ~/silabs-firmware \
     && git clone --depth 1 \
